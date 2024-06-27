@@ -1,0 +1,10 @@
+{
+  "name": "roistat-black-friday",
+  "author": "creatoff",
+    "scripts": {
+      "up-dev": "docker-compose -f docker-compose.dev.yml up --build",
+      "down-dev": "docker-compose -f docker-compose.dev.yml down",
+      "up-prod": "docker-compose up --build -d",
+      "down-prod": "docker-compose down"
+    }
+}

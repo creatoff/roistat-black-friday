@@ -1,0 +1,31 @@
+/* stylelint-disable */
+$screen-sm-max: 360px;
+$screen-md-max: 768px;
+$screen-lg-max: 1024px;
+$screen-xl-max: 1440px;
+
+@mixin media-breakpoint-up($size) {
+  @if $size == sm {
+    @media (min-width: $screen-sm-max) {
+      @content;
+    }
+  }
+  @else if $size == md {
+    @media (min-width: $screen-md-max) {
+      @content;
+    }
+  }
+  @else if $size == lg {
+    @media (min-width: $screen-lg-max) {
+      @content;
+    }
+  }
+  @else if $size == xl {
+    @media (min-width: $screen-xl-max) {
+      @content;
+    }
+  }
+  @else {
+    @error "Unsupported screen size. Please choose from: sm, md, lg, xl.";
+  }
+}
