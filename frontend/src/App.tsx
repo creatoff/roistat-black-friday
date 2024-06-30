@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button } from "./components/Button";
 import { Tape } from "./components/Tape";
 import { Registration } from "./components/Registration";
+import ArrowRightIcon from "./assets/arrow-right.svg?react";
+import { Header } from "./components/Header";
 
 export function App() {
   const [isRegistrationModalOpen, setIsRegistrationModalOpen] = useState(false);
@@ -17,23 +19,7 @@ export function App() {
   return (
     <>
       <div className="layout">
-        <header className="header glassed">
-          <div className="logo"></div>
-          <nav className="header__menu menu">
-            <ul className="menu__list">
-              <li className="menu__item">
-                <a href="#" className="menu__link">
-                  Наши предложения
-                </a>
-              </li>
-              <li className="menu__item">
-                <a href="#" className="menu__link">
-                  Цены
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+        <Header />
         <main className="slide">
           <div className="container">
               <div className="glow-ellipse"></div>
@@ -42,7 +28,10 @@ export function App() {
                 <p>
                   Воспользуйтесь выгодными предложениями от&nbsp;Roistat в&nbsp;ноябре*
                 </p>
-                <Button onClick={handleRegistrationButtonClick}>Получить выгоду</Button>
+                <Button onClick={handleRegistrationButtonClick}>
+                  <span>Получить выгоду</span>
+                  <ArrowRightIcon />
+                </Button>
               </article>
               <div className="slide__disclaimer">
                 *Акция не&nbsp;распространяется на&nbsp;подключение опций, лимитов, которые были подключены ранее до&nbsp;1.11.2023<br />Количество предложений ограничено

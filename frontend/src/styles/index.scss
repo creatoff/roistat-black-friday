@@ -118,6 +118,8 @@ body {
 
 .button {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: #8f8fff;
   border: 1px solid #8f8fff;
   padding: 16px 24px;
@@ -151,14 +153,17 @@ body {
   position: absolute !important;
   inset: 0 0 auto;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   padding: 16px;
   margin: 20px;
+  gap: 20px 0;
   border-radius: 24px;
   justify-content: space-between;
   z-index: 200 !important;
 
   @include media-breakpoint-up(md) {
+    flex-wrap: nowrap;
     padding: 18px 40px;
     margin: 40px 20px;
   }
@@ -178,15 +183,32 @@ body {
       display: block;
     }
   }
+
+  &__sandwich {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
 }
 
 .menu {
   &__list {
     display: flex;
+    flex-direction: column;
     padding: 0;
     margin: 0;
     list-style: none;
-    gap: 40px;
+    gap: 16px 40px;
+    @include media-breakpoint-up(md) {
+      flex-direction: row;
+    }
   }
 
   &__link {
@@ -280,7 +302,7 @@ body {
   &__hero {
     position: absolute;
     top: -220px;
-    left: -3px;
+    left: 17px;
     width: 382.58px;
     height: 535.62px;
     background-image: url('../assets/hero-360.svg');
